@@ -1,1 +1,28 @@
-index.phtml
+<?php
+// module/Admin/view/admin/admin/index.phtml:
+
+$title = 'My admins';
+$this->headTitle($title);
+?>
+<h1><?= $this->escapeHtml($title) ?></h1>
+<p>
+    <a href="<?= $this->url('admin', ['action' => 'add']) ?>">Add new admin</a>
+</p>
+
+<table class="table">
+<tr>
+    <th>Title</th>
+    <th>Artist</th>
+    <th>&nbsp;</th>
+</tr>
+<?php foreach ($admins as $admin) : ?>
+    <tr>
+        <td><?= $this->escapeHtml($admin->title) ?></td>
+        <td><?= $this->escapeHtml($admin->artist) ?></td>
+        <td>
+            <a href="<?= $this->url('admin', ['action' => 'edit', 'id' => $admin->id]) ?>">Edit</a>
+            <a href="<?= $this->url('admin', ['action' => 'delete', 'id' => $admin->id]) ?>">Delete</a>
+        </td>
+    </tr>
+<?php endforeach; ?>
+</table>

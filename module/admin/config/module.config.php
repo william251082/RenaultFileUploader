@@ -3,14 +3,8 @@
 namespace Admin;
 
 use Zend\Router\Http\Segment;
-use Zend\ServiceManager\Factory\InvokableFactory;
 
-return [
-    'controllers' => [
-        'factories' => [
-            Controller\AdminController::class => InvokableFactory::class,
-        ],
-    ],
+return 
 
     // The following section is new and should be added to your file:
     'router' => [
