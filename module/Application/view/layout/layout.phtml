@@ -24,6 +24,13 @@
         ?>
     </head>
     <body>
+        <div class="collapse navbar-collapse">
+            <?php // add this: ?>
+            <?= $this->navigation('navigation')->menu()
+                ->setMinDepth(0)
+                ->setMaxDepth(0)
+                ->setUlClass('nav navbar-nav') ?>
+        </div>
         <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
             <div class="container">
                 <div class="navbar-header">

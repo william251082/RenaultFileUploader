@@ -16,11 +16,11 @@ return [
     'router' => [
         'routes' => [
             'home' => [
-                'type' => \Zend\Router\Http\Literal::class,
+                'type' => Literal::class,
                 'options' => [
                     'route'    => '/',
                     'defaults' => [
-                        'controller' => AdminController::class,
+                        'controller' => Controller\IndexController::class,
                         'action'     => 'index',
                     ],
                 ],
@@ -32,6 +32,35 @@ return [
                     'defaults' => [
                         'controller' => Controller\IndexController::class,
                         'action'     => 'index',
+                    ],
+                ],
+            ],
+        ],
+    ],
+    'navigation' => [
+        'default' => [
+            [
+                'label' => 'Home',
+                'route' => 'home',
+            ],
+            [
+                'label' => 'Admin',
+                'route' => 'admin',
+                'pages' => [
+                    [
+                        'label'  => 'Add',
+                        'route'  => 'admin',
+                        'action' => 'add',
+                    ],
+                    [
+                        'label'  => 'Edit',
+                        'route'  => 'admin',
+                        'action' => 'edit',
+                    ],
+                    [
+                        'label'  => 'Delete',
+                        'route'  => 'admin',
+                        'action' => 'delete',
                     ],
                 ],
             ],
