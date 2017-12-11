@@ -1,7 +1,7 @@
 <?php
 // module/Admin/view/admin/admin/index.phtml:
 
-$title = 'My admins';
+$title = 'Admins';
 $this->headTitle($title);
 ?>
 <h1><?= $this->escapeHtml($title) ?></h1>
@@ -11,8 +11,8 @@ $this->headTitle($title);
 
 <table class="table">
 <tr>
-    <th>Title</th>
-    <th>Artist</th>
+    <th>Name</th>
+    <th>Position</th>
     <th>&nbsp;</th>
 </tr>
 <?php foreach ($admins as $admin) : ?>
