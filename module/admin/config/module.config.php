@@ -4,7 +4,7 @@ namespace Admin;
 
 use Zend\Router\Http\Segment;
 
-return 
+return [
 
     // The following section is new and should be added to your file:
     'router' => [
