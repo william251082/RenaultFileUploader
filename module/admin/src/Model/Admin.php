@@ -21,11 +21,21 @@ class Admin implements InputFilterAwareInterface
     // Add this property:
     private $inputFilter;
 
-    public function exchangeArray(array $data)
+    public function exchangeArray($data)
     {
-        $this->id     = !empty($data['id']) ? $data['id'] : null;
-        $this->artist = !empty($data['artist']) ? $data['artist'] : null;
-        $this->title  = !empty($data['title']) ? $data['title'] : null;
+        $this->id     = isset($data['id']) ? $data['id'] : null;
+        $this->artist = isset($data['artist']) ? $data['artist'] : null;
+        $this->title  = isset($data['title']) ? $data['title'] : null;
+    }
+
+    // Add the following method:
+    public function getArrayCopy()
+    {
+        return [
+            'id'     => $this->id,
+            'artist' => $this->artist,
+            'title'  => $this->title,
+        ];
     }
 
     /* Add the following methods: */
@@ -95,4 +105,6 @@ class Admin implements InputFilterAwareInterface
         $this->inputFilter = $inputFilter;
         return $this->inputFilter;
     }
+
+
 }
